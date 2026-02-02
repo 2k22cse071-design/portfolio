@@ -1,0 +1,12 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "Kathir's Portfolio",
+  "scripts": {
+    "prestart": "npx -y kill-port 3000",
+    "start": "npx serve . -l tcp://127.0.0.1:3000"
+  },
+  "keywords": [],
+  "author": "Kathir",
+  "license": "ISC"
+}
