@@ -139,7 +139,7 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Avatar -->
-            <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="Kathir's Avatar" />
+            <img class="masthead-avatar mb-5" src="assets/img/profile.png" alt="Kathir's Avatar" />
             <!-- Heading -->
             <h1 class="masthead-heading text-uppercase mb-0">Hi, I’m Kathir Raj M</h1>
             <!-- Icon Divider -->
@@ -330,7 +330,12 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <p class="lead mb-4">Let’s connect!</p>
-                    <p class="h5 mb-3"><i class="fas fa-envelope me-2"></i>Email: kathirraj.m123@gmail.com</p>
+                    <p class="h5 mb-3">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kathirraj.m123@gmail.com" target="_blank"
+                            class="text-white text-decoration-none">
+                            <i class="fas fa-envelope me-2"></i>Email: kathirraj.m123@gmail.com
+                        </a>
+                    </p>
                     <div class="mt-4">
                         <a class="btn btn-outline-light btn-social mx-2 p-3" href="[Your LinkedIn URL]"
                             target="_blank"><i class="fab fa-fw fa-linkedin-in fa-2x"></i></a>
@@ -340,50 +345,53 @@
                 </div>
             </div>
 
-            <!-- Contact Form (Reference only since API key needed) -->
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7">
                     <p class="text-center mt-5 mb-3">Or send a message:</p>
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                        onload="handleFormLoad()"></iframe>
+                    <form id="contactForm"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLScVK_lr2Dl9KCWWn3hvnjEP4hnqSEEx2yk5Jy4it-j7w9yazw/formResponse"
+                        method="POST" target="hidden_iframe" onsubmit="handleFormSubmit()">
+                        <input type="hidden" name="submitted" id="submitted_value" value="">
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                                data-sb-validations="required" />
+                            <input class="form-control" id="name" name="entry.297096207" type="text"
+                                placeholder="Enter your name..." required />
                             <label for="name" class="text-dark">Full name</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                data-sb-validations="required,email" />
+                            <input class="form-control" id="email" name="entry.2003480203" type="email"
+                                placeholder="name@example.com" required />
                             <label for="email" class="text-dark">Email address</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                data-sb-validations="required" />
+                            <input class="form-control" id="phone" name="entry.1811975362" type="tel"
+                                placeholder="(123) 456-7890" required />
                             <label for="phone" class="text-dark">Phone number</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
-                            </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text"
-                                placeholder="Enter your message here..." style="height: 10rem"
-                                data-sb-validations="required"></textarea>
+                            <textarea class="form-control" id="message" name="entry.113739539" type="text"
+                                placeholder="Enter your message here..." style="height: 10rem" required></textarea>
                             <label for="message" class="text-dark">Message</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
-                            </div>
                         </div>
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                            </div>
-                        </div>
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
-                        </div>
-                        <button class="btn btn-xl btn-outline-light" id="submitButton" type="submit">Send
-                            Message</button>
+                        <button class="btn btn-xl btn-primary" id="submitButton" type="submit">Send Message</button>
                     </form>
+                    <script type="text/javascript">
+                        var submitted = false;
+                        function handleFormSubmit() {
+                            submitted = true;
+                        }
+                        function handleFormLoad() {
+                            if (submitted) {
+                                var form = document.getElementById('contactForm');
+                                form.reset();
+                                alert('Thank you! Your message has been sent.');
+                                submitted = false;
+                            }
+                        }
+                    </script>
+
                 </div>
             </div>
         </div>
@@ -420,13 +428,10 @@
         </div>
     </footer>
 
-    <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
         <div class="container"><small>Copyright &copy; Kathir Raj M 2026</small></div>
     </div>
 
-    <!-- Portfolio Modals -->
-    <!-- Modal 1: Electricity Billing -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
         aria-hidden="true">
         <div class="modal-dialog modal-xl">
