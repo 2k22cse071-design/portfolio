@@ -1,0 +1,299 @@
+/* 
+ * Custom Professional Aesthetics 
+ * Theme: Modern Tech (Dark/Deep Navy)
+ */
+
+:root {
+    /* Color Palette */
+    --bg-primary: #0f172a;
+    /* Deep Slate */
+    --bg-secondary: #1e293b;
+    /* Lighter Slate */
+    --accent-color: #38bdf8;
+    /* Sky Blue */
+    --accent-glow: rgba(56, 189, 248, 0.3);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+
+    /* Gradients */
+    --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --card-gradient: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.7));
+
+    /* Spacing */
+    --section-padding: 6rem 0;
+}
+
+body,
+* {
+    font-family: 'Outfit', 'Segoe UI', sans-serif !important;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 700;
+    color: var(--text-primary) !important;
+}
+
+.text-secondary {
+    color: var(--accent-color) !important;
+}
+
+p.lead {
+    color: var(--text-secondary);
+}
+
+/* Navigation */
+#mainNav {
+    background-color: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+#mainNav .navbar-brand {
+    color: var(--accent-color);
+}
+
+.social-icon-nav {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    /* Subtle background */
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+.social-icon-nav:hover {
+    color: var(--accent-color) !important;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#mainNav .nav-link {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+#mainNav .nav-link.active,
+#mainNav .nav-link:hover {
+    color: var(--bg-primary) !important;
+}
+
+/* Header / Masthead */
+.masthead {
+    background: var(--hero-gradient) !important;
+    padding-top: calc(6rem + 74px);
+    padding-bottom: 6rem;
+}
+
+.masthead-avatar {
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* Sections */
+.page-section {
+    padding: var(--section-padding);
+}
+
+.bg-primary {
+    background-color: var(--bg-primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--bg-secondary) !important;
+}
+
+/* Cards & Glassmorphism */
+.skill-card {
+    background: var(--card-gradient);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card i {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Timeline */
+.timeline-item {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.timeline-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item h4 {
+    color: var(--text-secondary) !important;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Portfolio Grid */
+.portfolio-item {
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item .portfolio-item-caption {
+    background-color: rgba(15, 23, 42, 0.9);
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Divider Customization */
+.divider-custom .divider-custom-line {
+    background-color: var(--text-secondary);
+}
+
+.divider-custom .divider-custom-icon {
+    color: var(--accent-color) !important;
+    font-size: 1.5rem;
+}
+
+/* Contact Form */
+.form-floating input,
+.form-floating textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.form-floating input:focus,
+.form-floating textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: none;
+    color: var(--text-primary);
+}
+
+.form-floating label {
+    color: var(--text-secondary) !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-xl {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: var(--bg-primary) !important;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9 !important;
+    /* Slightly darker shade of Sky Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px var(--accent-glow);
+}
+
+.btn-social {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.btn-social:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+/* Footer */
+.footer {
+    background-color: #020617;
+    /* Very Dark Slate */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.copyright {
+    background-color: #020617;
+}
+
+/* Modal */
+.portfolio-modal .modal-content {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.portfolio-modal .close-modal {
+    color: var(--text-primary);
+}
+
+/* Animations */
+/* These will be handled by AOS, but base transitions here */
+* {
+    transition: background-color 0.3s, border-color 0.3s;
+}
