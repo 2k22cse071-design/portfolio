@@ -1,25 +1,12 @@
-/* 
- * Custom Professional Aesthetics 
- * Theme: Modern Tech (Dark/Deep Navy)
- */
-
 :root {
-    /* Color Palette */
     --bg-primary: #0f172a;
-    /* Deep Slate */
     --bg-secondary: #1e293b;
-    /* Lighter Slate */
     --accent-color: #38bdf8;
-    /* Sky Blue */
     --accent-glow: rgba(56, 189, 248, 0.3);
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
-
-    /* Gradients */
     --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     --card-gradient: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.7));
-
-    /* Spacing */
     --section-padding: 6rem 0;
 }
 
@@ -28,7 +15,6 @@ body,
     font-family: 'Outfit', 'Segoe UI', sans-serif !important;
 }
 
-/* Typography Overrides */
 h1,
 h2,
 h3,
@@ -53,7 +39,6 @@ p.lead {
     color: var(--text-secondary);
 }
 
-/* Navigation */
 #mainNav {
     background-color: rgba(15, 23, 42, 0.9) !important;
     backdrop-filter: blur(10px);
@@ -70,7 +55,6 @@ p.lead {
 .social-icon-nav {
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.05);
-    /* Subtle background */
     width: 36px;
     height: 36px;
     display: flex;
@@ -100,7 +84,6 @@ p.lead {
     color: var(--bg-primary) !important;
 }
 
-/* Header / Masthead */
 .masthead {
     background: var(--hero-gradient) !important;
     padding-top: calc(6rem + 74px);
@@ -112,7 +95,6 @@ p.lead {
     box-shadow: 0 0 30px var(--accent-glow);
 }
 
-/* Sections */
 .page-section {
     padding: var(--section-padding);
 }
@@ -125,7 +107,6 @@ p.lead {
     background-color: var(--bg-secondary) !important;
 }
 
-/* Cards & Glassmorphism */
 .skill-card {
     background: var(--card-gradient);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -154,7 +135,6 @@ p.lead {
     transform: scale(1.1);
 }
 
-/* Timeline */
 .timeline-item {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
     padding-left: 2rem;
@@ -185,7 +165,6 @@ p.lead {
     margin-bottom: 1rem;
 }
 
-/* Portfolio Grid */
 .portfolio-item {
     border-radius: 1rem;
     overflow: hidden;
@@ -208,7 +187,6 @@ p.lead {
     transform: scale(1.05);
 }
 
-/* Divider Customization */
 .divider-custom .divider-custom-line {
     background-color: var(--text-secondary);
 }
@@ -218,7 +196,6 @@ p.lead {
     font-size: 1.5rem;
 }
 
-/* Contact Form */
 .form-floating input,
 .form-floating textarea {
     background-color: rgba(255, 255, 255, 0.05);
@@ -238,7 +215,6 @@ p.lead {
     color: var(--text-secondary) !important;
 }
 
-/* Buttons */
 .btn-primary,
 .btn-xl {
     background-color: var(--accent-color) !important;
@@ -254,7 +230,6 @@ p.lead {
 
 .btn-primary:hover {
     background-color: #0ea5e9 !important;
-    /* Slightly darker shade of Sky Blue */
     transform: translateY(-2px);
     box-shadow: 0 10px 20px -5px var(--accent-glow);
 }
@@ -270,10 +245,8 @@ p.lead {
     color: var(--bg-primary);
 }
 
-/* Footer */
 .footer {
     background-color: #020617;
-    /* Very Dark Slate */
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
@@ -282,7 +255,6 @@ p.lead {
     background-color: #020617;
 }
 
-/* Modal */
 .portfolio-modal .modal-content {
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -292,8 +264,83 @@ p.lead {
     color: var(--text-primary);
 }
 
-/* Animations */
-/* These will be handled by AOS, but base transitions here */
 * {
     transition: background-color 0.3s, border-color 0.3s;
+}
+
+#skeleton-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: opacity 0.5s ease;
+}
+
+#skeleton-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.skeleton-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton-item {
+    background: linear-gradient(90deg,
+            rgba(30, 41, 59, 0.5) 25%,
+            rgba(56, 189, 248, 0.1) 50%,
+            rgba(30, 41, 59, 0.5) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 8px;
+}
+
+.skeleton-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.skeleton-title {
+    width: 60%;
+    height: 40px;
+    margin-top: 1rem;
+}
+
+.skeleton-divider {
+    width: 30%;
+    height: 10px;
+}
+
+.skeleton-text {
+    width: 80%;
+    height: 20px;
+}
+
+.skeleton-text-sm {
+    width: 50%;
+    height: 20px;
 }
